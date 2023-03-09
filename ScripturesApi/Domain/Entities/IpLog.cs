@@ -8,6 +8,9 @@ public class IpLog : EntityBase
 
     [StringLength(45)]
     public string? Ip { get; set; }
+
+    public string? RequestUri { get; set; }
+
     public DateTime RequestedAtUtc { get; set; }
 
     public virtual ClientKey? ClientKey { get; set; }

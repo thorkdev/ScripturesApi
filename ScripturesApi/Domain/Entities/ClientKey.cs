@@ -11,6 +11,8 @@ public class ClientKey
 
     public bool IsActive { get; set; }
 
+    public ClientKeyRole ClientKeyRole { get; set; }
+
     public DateTime CreatedAtUtc { get; set; }
     public DateTime UpdatedAtUtc { get; set; }
 

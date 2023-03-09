@@ -52,6 +52,25 @@ internal class ClientService : IClientService
         return false;
     }
 
+    public async Task<ClientKeyRole?> GetClientRoleAsync(Guid key)
+    {
+        try
+        {
+            var role = await _context.ClientKeys
+                .Where(x => x.ApiKey == key)
+                .Select(x => x.ClientKeyRole)
+                .FirstOrDefaultAsync();
+
+            return role;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message, key);
+        }
+
+        return null;
+    }
+
     public async Task<Guid?> CreateApiKeyAsync()
     {
         try

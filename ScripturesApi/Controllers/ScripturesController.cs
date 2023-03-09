@@ -78,10 +78,4 @@ public class ScripturesController : ControllerBase
     // todo: verses
     //  - get verse by id
     //  - get verses by chapter id
-
-#if DEBUG // todo: scope api keys instead?
-
-    // todo: generate api key
-
-#endif
 }

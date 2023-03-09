@@ -16,7 +16,7 @@ internal class IpService : IIpService
         _context = context;
     }
 
-    public async Task LogIpAsync(Guid apiKey, string ip)
+    public async Task LogIpAsync(Guid apiKey, string ip, string uri)
     {
         try
         {
@@ -24,6 +24,7 @@ internal class IpService : IIpService
             {
                 Ip = ip,
                 ClientKeyId = apiKey,
+                RequestUri = uri,
                 RequestedAtUtc = DateTime.UtcNow
             };
 

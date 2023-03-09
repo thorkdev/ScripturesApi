@@ -1,4 +1,5 @@
-﻿using ScripturesApi.Extensions;
+﻿using Microsoft.AspNetCore.Http.Extensions;
+using ScripturesApi.Extensions;
 using ScripturesApi.Services.Abstract;
 
 namespace ScripturesApi.Middleware;
@@ -64,7 +65,9 @@ public class ApiKeyMiddleware
 
         if (!string.IsNullOrEmpty(ip))
         {
-            await ipService.LogIpAsync(guid, ip);
+            var requestUri = context.Request.GetEncodedUrl();
+
+            await ipService.LogIpAsync(guid, ip, requestUri);
         }
 
         await _next(context);
