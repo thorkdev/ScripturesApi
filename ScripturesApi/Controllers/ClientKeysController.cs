@@ -25,7 +25,7 @@ public class ClientKeysController : ControllerBase
     }
 
     [HttpGet("generate")]
-    public async Task<IActionResult> GenerateClientKey()
+    public async Task<IActionResult> GenerateClientKey([FromQuery] ClientKeyRole? role)
     {
         try
         {
@@ -36,7 +36,7 @@ public class ClientKeysController : ControllerBase
                 return Unauthorized();
             }
 
-            var key = await _clientService.CreateApiKeyAsync();
+            var key = await _clientService.CreateApiKeyAsync(role);
 
             if (key == null)
             {
@@ -53,8 +53,8 @@ public class ClientKeysController : ControllerBase
         }
     }
 
-    [HttpGet("toggle/{apiKey:guid}")]
-    public async Task<IActionResult> ToggleClientKey(Guid apiKey)
+    [HttpPost("toggle/{apiKey:guid}")]
+    public async Task<IActionResult> ToggleClientKey([FromRoute] Guid apiKey)
     {
         try
         {

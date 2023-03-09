@@ -71,13 +71,14 @@ internal class ClientService : IClientService
         return null;
     }
 
-    public async Task<Guid?> CreateApiKeyAsync()
+    public async Task<Guid?> CreateApiKeyAsync(ClientKeyRole? role)
     {
         try
         {
             var clientKey = new ClientKey
             {
                 IsActive = true,
+                ClientKeyRole = role ?? ClientKeyRole.User,
                 CreatedAtUtc = DateTime.UtcNow
             };
 
