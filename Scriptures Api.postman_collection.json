@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "7783e652-f25f-4c79-b362-b809b7d278bf",
+		"name": "Scriptures Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14847030"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get Book by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/{{api-version}}/scriptures/books/1",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"{{api-version}}",
+								"scriptures",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"nephi\",\r\n    \"slug\": null,\r\n    \"page\": {\r\n        \"index\": 1,\r\n        \"size\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/{{api-version}}/scriptures/books",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"{{api-version}}",
+								"scriptures",
+								"books"
+							],
+							"query": [
+								{
+									"key": "slug",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chapters",
+			"item": [
+				{
+					"name": "Get Chapter by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/{{api-version}}/scriptures/chapters/1",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"{{api-version}}",
+								"scriptures",
+								"chapters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Chapters",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"index\": null,\r\n    \"reference\": null,\r\n    \"bookIds\": [ 1 ],\r\n    \"page\": {\r\n        \"index\": 1,\r\n        \"size\": 10\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/{{api-version}}/scriptures/chapters",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"{{api-version}}",
+								"scriptures",
+								"chapters"
+							],
+							"query": [
+								{
+									"key": "slug",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verses",
+			"item": [
+				{
+					"name": "Get Verse by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/{{api-version}}/scriptures/verses/1",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"{{api-version}}",
+								"scriptures",
+								"verses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Verses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"chapterId\": 1,\r\n    \"page\": {\r\n        \"index\": 1,\r\n        \"size\": 5\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/{{api-version}}/scriptures/verses",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"{{api-version}}",
+								"scriptures",
+								"verses"
+							],
+							"query": [
+								{
+									"key": "slug",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "<insert api key here>",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api-version",
+			"value": "v1",
+			"type": "string"
+		},
+		{
+			"key": "base-url",
+			"value": "https://scripturesapi.azurewebsites.net",
+			"type": "string"
+		}
+	]
+}
