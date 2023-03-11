@@ -4,18 +4,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ScripturesApi.Requests;
 
-public class FilterBooksRequest : IFilter
+public class PagedVersesRequest : IFilter
 {
-    public FilterBooksRequest()
+    public PagedVersesRequest()
     {
         Page = new();
     }
 
-    [MinLength(3)]
-    public string? Title { get; set; }
-
-    [MinLength(3)]
-    public string? Slug { get; set; }
+    [Required]
+    public int ChapterId { get; set; }
 
     public Page? Page { get; set; }
 }

@@ -5,7 +5,7 @@ using ScripturesApi.Services.Abstract;
 namespace ScripturesApi.Controllers;
 
 #if DEBUG
-[ApiExplorerSettings(IgnoreApi = false)]
+    [ApiExplorerSettings(IgnoreApi = false)]
 #else
     [ApiExplorerSettings(IgnoreApi = true)]
 #endif 
