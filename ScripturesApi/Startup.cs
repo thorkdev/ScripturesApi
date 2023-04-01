@@ -35,16 +35,16 @@ public class Startup
                 Version = "v1",
                 Title = "Scriptures API",
                 Description = "An ASP.NET Core Web API for viewing scriptures.",
-                TermsOfService = new("https://example.com/terms"),
                 Contact = new()
                 {
-                    Name = "Example Contact",
-                    Url = new("https://example.com/contact")
+                    Name = "Contact",
+                    Url = new("https://thorknox.dev"),
+                    Email = "contact@thorknox.dev"
                 },
                 License = new()
                 {
-                    Name = "Example License",
-                    Url = new("https://example.com/license")
+                    Name = "License",
+                    Url = new("https://www.mit.edu/~amini/LICENSE.md")
                 }
             });
 
